@@ -1,0 +1,225 @@
+nov. 19, 2016 3:04:37 AM ca.ulaval.glo4003.quickflyws.infrastructure.flight.flightModificationLogger.FlightModificationLoggerInFile log
+INFOS: Modifications saved for the following flight : 
+
+Flight Details : 
+Source : Japon	Destination : QC	Date : 2017-12-01	Company : AirJapan
+Weight Category : AIR_LOURD	SeatsAvailables : 43	Price : 97.49
+Can Exceed Weight : true	Exceeding Weight Available For Luggage : 8.0
+	Maximum Exceeding Weight : 8.0
+
+nov. 19, 2016 3:16:29 AM ca.ulaval.glo4003.quickflyws.infrastructure.flight.flightModificationLogger.FlightModificationLoggerInFile log
+INFOS: Modifications saved for the following flight : 
+
+Flight Details
+Source : Japon
+Destination : QC
+Date : 2017-12-01
+Company : AirJapan
+Weight Category : AIR_LOURD
+SeatsAvailables : 43
+Price : 97.49
+Can Exceed Weight : true
+Exceeding Weight Available For Luggage : 8.0
+Maximum Exceeding Weight : 8.0
+
+nov. 19, 2016 5:03:15 PM ca.ulaval.glo4003.quickflyws.infrastructure.flight.flightModificationLogger.FlightModificationLoggerInFile log
+INFOS: Modifications saved for the following flight : 
+
+Flight Details
+Source : Japon
+Destination : QC
+Date : 2017-12-01
+Company : AirJapan
+Weight Category : AIR_LOURD
+SeatsAvailables : 42
+Price : 97.49
+Exceeding Weight Available For Luggage : 5.0
+Maximum Exceeding Weight : 13.0
+
+nov. 20, 2016 12:36:58 AM ca.ulaval.glo4003.quickflyws.infrastructure.flight.flightModificationLogger.FlightModificationLoggerInFile log
+INFOS: Modifications saved for the following flight : 
+
+Flight Details
+Source : Japon
+Destination : QC
+Date : 2017-12-01
+Company : AirJapan
+Weight Category : AIR_LOURD
+SeatsAvailables : 35
+Price : 97.49
+Exceeding Weight Available For Luggage : 1.0
+Maximum Exceeding Weight : 9.0
+
+nov. 20, 2016 12:37:47 AM ca.ulaval.glo4003.quickflyws.infrastructure.flight.flightModificationLogger.FlightModificationLoggerInFile log
+INFOS: Modifications saved for the following flight : 
+
+Flight Details
+Source : Japon
+Destination : QC
+Date : 2017-12-01
+Company : AirJapan
+Weight Category : AIR_LOURD
+SeatsAvailables : 35
+Price : 97.49
+Exceeding Weight Available For Luggage : 12.5
+Maximum Exceeding Weight : 20.5
+
+nov. 24, 2016 2:53:15 AM ca.ulaval.glo4003.quickflyws.infrastructure.flight.flightModificationLogger.FlightModificationLoggerInFile log
+INFOS: Modifications saved for the following flight : 
+
+Flight Details
+Source : QC
+Destination : Cuba
+Date : 2017-10-01
+Company : AirCanada
+AirVivant : yes
+Weight Category : AIR_LOURD
+SeatsAvailables : 3
+Price : 29.99
+Exceeding Weight Available For Luggage : 13.0
+Maximum Exceeding Weight : 13.0
+
+nov. 24, 2016 2:53:53 AM ca.ulaval.glo4003.quickflyws.infrastructure.flight.flightModificationLogger.FlightModificationLoggerInFile log
+INFOS: Modifications saved for the following flight : 
+
+Flight Details
+Source : QC
+Destination : Cuba
+Date : 2017-10-01
+Company : AirCanada
+AirVivant : yes
+Weight Category : AIR_LOURD
+SeatsAvailables : 3
+Price : 29.99
+Exceeding Weight Available For Luggage : 13.5
+Maximum Exceeding Weight : 13.5
+
+nov. 26, 2016 1:19:10 PM ca.ulaval.glo4003.quickflyws.infrastructure.flight.flightModificationLogger.FlightModificationLoggerInFile log
+INFOS: Modifications saved for the following flight : 
+
+Flight Details
+Source : QC
+Destination : Cuba
+Date : 2017-10-01
+Departure time : 13:00
+Company : AirCanada
+AirVivant : yes
+Weight Category : AIR_LOURD
+SeatsAvailables : 3
+Price : 29.99
+Exceeding Weight Available For Luggage : 13.0
+Maximum Exceeding Weight : 13.0
+
+nov. 26, 2016 4:09:59 PM ca.ulaval.glo4003.quickflyws.infrastructure.flight.flightModificationLogger.FlightModificationLoggerInFile log
+INFOS: Modifications saved for the following flight : 
+
+Flight Details
+Source : QC
+Destination : Japon
+Date : 2017-01-01
+Departure time : 17:00
+Company : AirJapan
+AirVivant : yes
+Weight Category : AIR_LOURD
+SeatsAvailables : 24
+Price : 397.49
+Exceeding Weight Available For Luggage : 51.5
+Maximum Exceeding Weight : 51.5
+
+nov. 26, 2016 4:10:15 PM ca.ulaval.glo4003.quickflyws.infrastructure.flight.flightModificationLogger.FlightModificationLoggerInFile log
+INFOS: Modifications saved for the following flight : 
+
+Flight Details
+Source : QC
+Destination : Cuba
+Date : 2017-11-21
+Departure time : 13:00
+Company : AirCanada
+AirVivant : no
+Weight Category : AIR_LOURD
+SeatsAvailables : 21
+Price : 199.99
+Exceeding Weight Available For Luggage : 2.0
+Maximum Exceeding Weight : 2.0
+
+nov. 26, 2016 5:30:32 PM ca.ulaval.glo4003.quickflyws.infrastructure.flight.flightModificationLogger.FlightModificationLoggerInFile log
+INFOS: Modifications saved for the following flight : 
+
+Flight Details
+Source : QC
+Destination : Japon
+Date : 2017-01-01
+Departure time : 17:00
+Company : AirJapan
+AirVivant : yes
+Weight Category : AIR_LOURD
+SeatsAvailables : 24
+Price : 397.49
+Exceeding Weight Available For Luggage : 55.0
+Maximum Exceeding Weight : 55.0
+
+nov. 27, 2016 1:49:04 AM ca.ulaval.glo4003.quickflyws.infrastructure.flight.flightModificationLogger.FlightModificationLoggerInFile log
+INFOS: Modifications saved for the following flight : 
+
+Flight Details
+Source : QC
+Destination : Japon
+Date : 2017-01-01
+Company : AirJapan
+AirVivant : yes
+Weight Category : AIR_LOURD
+Exceeding Weight Available For Luggage : 52.5
+Maximum Exceeding Weight : 52.5
+
+nov. 27, 2016 2:00:20 AM ca.ulaval.glo4003.quickflyws.infrastructure.flight.flightModificationLogger.FlightModificationLoggerInFile log
+INFOS: Modifications saved for the following flight : 
+
+Flight Details
+Source : QC
+Destination : Japon
+Date : 2017-01-01
+Company : AirJapan
+AirVivant : yes
+Weight Category : AIR_LOURD
+Exceeding Weight Available For Luggage : 51.5
+Maximum Exceeding Weight : 51.5
+
+nov. 27, 2016 2:00:29 AM ca.ulaval.glo4003.quickflyws.infrastructure.flight.flightModificationLogger.FlightModificationLoggerInFile log
+INFOS: Modifications saved for the following flight : 
+
+Flight Details
+Source : QC
+Destination : Japon
+Date : 2017-01-01
+Company : AirJapan
+AirVivant : yes
+Weight Category : AIR_LOURD
+Exceeding Weight Available For Luggage : 54.5
+Maximum Exceeding Weight : 54.5
+
+nov. 28, 2016 1:26:29 AM ca.ulaval.glo4003.quickflyws.infrastructure.flight.flightModificationLogger.FlightModificationLoggerInFile log
+INFOS: Modifications saved for the following flight : 
+
+Flight Details
+Source : QC
+Destination : Cuba
+Date : 2017-10-01
+Company : AirGras
+AirVivant : yes
+Weight Category : AIR_LOURD
+Exceeding Weight Available For Luggage : 15.0
+Maximum Exceeding Weight : 15.0
+
+nov. 28, 2016 1:27:42 AM ca.ulaval.glo4003.quickflyws.infrastructure.flight.flightModificationLogger.FlightModificationLoggerInFile log
+INFOS: Modifications saved for the following flight : 
+
+Flight Details
+Source : QC
+Destination : Cuba
+Date : 2017-10-01
+Company : AirGras
+AirVivant : yes
+Weight Category : AIR_LOURD
+Exceeding Weight Available For Luggage : 17.0
+Maximum Exceeding Weight : 17.0
+
