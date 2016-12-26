@@ -1,0 +1,1 @@
+var cartApp = angular.module('quickflyApp.cart', []);

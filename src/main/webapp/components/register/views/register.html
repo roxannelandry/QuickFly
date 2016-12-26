@@ -1,0 +1,29 @@
+<div ng-controller="register-controller">
+	<form class="loginFormInput" ng-submit="register()">
+		<div class="input-group">
+			<input type="email" ng-model="email" id="emailInput"
+				class="form-control shadowPurple" placeholder="Email" />
+		</div>
+		<div class="input-group">
+			<input type="password" ng-model="password" id="passwordInput"
+				class="form-control shadowPurple" placeholder="Password" />
+		</div>
+		<div class="input-group loginButtonDiv">
+			<input type="submit" id="signUpButton"
+				class="btn btn-primary btn-lg gradient signUp" value="Sign up" />
+		</div>
+		<div class="input-group">
+			<input type="button" id="cancelButton"
+				class="btn btn-primary btn-lg gradient" value="Cancel"
+				ng-click="cancelRegistration()" />
+		</div>
+	</form>
+	<div ng-show="error">
+		<div class="imgLeftDivError">
+			<img src="/img/error.png">
+		</div>
+		<div class="errorBanner textBesideImg">
+			<h5>{{errorMessage}}</h5>
+		</div>
+	</div>
+</div>

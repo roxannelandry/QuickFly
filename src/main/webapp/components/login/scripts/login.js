@@ -1,0 +1,1 @@
+var loginApp = angular.module('quickflyApp.login', []);

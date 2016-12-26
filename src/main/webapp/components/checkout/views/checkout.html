@@ -1,0 +1,71 @@
+<div ng-controller="checkout-controller">
+
+	<div>Will eventually enter payment informations.</div>
+
+	<div>Please enter the email where you want to receive your
+		tickets.</div>
+
+	<form class="checkoutFormInput" ng-submit="checkout()">
+		<div class="form-group">
+			<input type="text" name="checkoutEmail" ng-model="checkoutEmail"
+				id="emailInput" class="form-control" placeholder="Email" />
+		</div>
+		<div class="form-group buyButtonDiv">
+			<input type="submit" id="buyButton"
+				class="btn btn-primary btn-lg gradient" value="Buy"
+				ng-disabled="disableBuyButton" />
+		</div>
+	</form>
+
+	<div ng-show="showTransactionSection">
+		<div>TRANSACTION COMPLETED</div>
+		<table class="table table-striped bottom">
+			<thead class="theadFont">
+				<tr>
+					<td>Source</td>
+					<td>Destination</td>
+					<td>Date</td>
+					<td>Departure Time</td>
+					<td>Company</td>
+					<td>Luggage Weight</td>
+					<td>Quantity</td>
+					<td>Departure Time of Cargo Flight</td>
+					<td>Price</td>
+					<td>Total per flight</td>
+
+				</tr>
+			</thead>
+			<tbody class="tbodyFont" ng-hide="error">
+				<tr ng-repeat="flightDetail in transactionDetails.cartItems">
+					<td>{{flightDetail.source}}</td>
+					<td>{{flightDetail.destination}}</td>
+					<td>{{flightDetail.date}}</td>
+					<td>{{flightDetail.departureTime}}</td>
+					<td>{{flightDetail.company}}</td>
+					<td>{{flightDetail.luggageWeight}}</td>
+					<td>{{flightDetail.numberOfTickets}}</td>
+					<td>{{flightDetail.airCargoDate}}</td>
+					<td>{{flightDetail.pricePerTicket.toFixed(2)}} $</td>
+					<td>{{flightDetail.totalPrice.toFixed(2)}} $</td>
+				</tr>
+				<tr>
+					<td>Total price : {{transactionDetails.totalPrice.toFixed(2)}}</td>
+				</tr>
+			</tbody>
+		</table>
+		<div>
+			<input id="buyButton"
+				class="pull-right btn btn-primary btn-sx gradient"
+				value="Return home" ui-sref="home" />
+		</div>
+	</div>
+
+	<div ng-show="error">
+		<div class="imgLeftDivError">
+			<img class="errorImg" src="/img/error.png">
+		</div>
+		<div class="errorText textBesideImg">
+			<h5>{{errorMessage}}</h5>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,93 @@
+<div ng-controller="planesConfiguration-controller">
+	<input type="submit" class="btn btn-primary btn-md" id="searchButton"
+		value="All flights" ng-click="getAllFlights()" /> <input
+		type="submit" class="btn btn-primary btn-md" id="searchButton"
+		value="AirLourd Flights" ng-click="getAirLourdFlights()" />
+
+	<div ng-show="error">
+		<div class="imgLeftDivError">
+			<img class="errorImg" src="/img/error.png">
+		</div>
+		<div class="errorText textBesideImg">
+			<h4>{{errorMessage}}</h4>
+		</div>
+
+	</div>
+	<div ng-show="!error">
+		<div class="successText">
+			<h4>{{successMessage}}</h4>
+		</div>
+	</div>
+
+	<div>
+		<table class="table table-striped bottom">
+			<thead class="theadFont">
+				<tr>
+					<td>Flight category</td>
+					<td>Company</td>
+					<td>Source</td>
+					<td>Destination</td>
+					<td>Date</td>
+					<td>Departure Time</td>
+					<td>Economic seats</td>
+					<td>Economic seats price</td>
+					<td>Regular seats</td>
+					<td>Regular seats price</td>
+					<td>Business seats</td>
+					<td>Business seats price</td>
+					<td>Maximum exceeding weight</td>
+				</tr>
+			</thead>
+			<tbody class="tbodyFont">
+				<tr ng-repeat="flight in flights">
+					<td>{{flight.flightCategory}}</td>
+					<td>{{flight.company}}</td>
+					<td>{{flight.source}}</td>
+					<td>{{flight.destination}}</td>
+					<td>{{flight.date}}</td>
+					<td>{{flight.departureTime}}</td>
+					<td>{{flight.numberOfSeatsEconomic}}</td>
+					<td>{{flight.seatsEconomicPrice}}$</td>
+					<td>{{flight.numberOfSeatsRegular}}</td>
+					<td>{{flight.seatsRegularPrice}}$</td>
+					<td>{{flight.numberOfSeatsBusiness}}</td>
+					<td>{{flight.seatsBusinessPrice}}$</td>
+					<td><input ng-disabled="flight.flightCategory != 'AIR_LOURD'"
+						type="number" style="width: 75px" max="200" min="0"
+						ng-model="flight.maximumExceedingWeight" step="0.5"></td>
+					<td><input type="submit"
+						ng-disabled="flight.flightCategory != 'AIR_LOURD'"
+						class="btn btn-primary gradient pull-right"
+						style="width: 160px; margin-right: 4%" value="Update"
+						ng-click="updateFlight(flight)" /></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div ng-show="showAirCargo">
+		<table class="table table-striped bottom">
+			<thead class="theadFont">
+				<tr>
+					<td>Flight category</td>
+					<td>Company</td>
+					<td>Source</td>
+					<td>Destination</td>
+					<td>Date</td>
+					<td>Departure Time</td>
+					<td>Maximum weight</td>
+				</tr>
+			</thead>
+			<tbody class="tbodyFont">
+				<tr ng-repeat="flight in flightsCargo">
+					<td>{{flight.flightCategory}}</td>
+					<td>{{flight.company}}</td>
+					<td>{{flight.source}}</td>
+					<td>{{flight.destination}}</td>
+					<td>{{flight.date}}</td>
+					<td>{{flight.departureTime}}</td>
+					<td>{{flight.maximumExceedingWeight}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

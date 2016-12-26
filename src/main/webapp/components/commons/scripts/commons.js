@@ -1,0 +1,1 @@
+var commonsApp = angular.module('quickflyApp.commons', []);

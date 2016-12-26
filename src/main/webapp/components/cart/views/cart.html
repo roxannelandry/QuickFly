@@ -1,0 +1,60 @@
+<div ng-controller="cart-controller">
+	<div class="imgLeftDiv">
+		<img class="iconCart" src="/img/cart.png">
+	</div>
+	<div class="textBesideImg" ng-show="user && user.email != {}">
+		<h3>Shopping cart for : {{user.email}} {{sessionId}}</h3>
+	</div>
+	<div class="textBesideImg" ng-show="sessionId && sessionId != {}">
+		<h3>Shopping cart for : Anonymous</h3>
+	</div>
+	<div ng-show="isLogin">
+		<table class="table table-striped table-responsive">
+			<thead class="theadFont" ng-show="hasItemInCart">
+				<tr>
+					<td>Source</td>
+					<td>Destination</td>
+					<td>Date</td>
+					<td>Departure Time</td>
+					<td>Company</td>
+					<td>Luggage Weight</td>
+					<td>Departure Time of Cargo Flight</td>
+					<td>Seat category</td>
+					<td>Price</td>
+					<td>Tickets</td>
+				</tr>
+			</thead>
+			<tbody class="tbodyFont">
+				<tr ng-repeat="cartItem in cartItems">
+					<td>{{cartItem.source}}</td>
+					<td>{{cartItem.destination}}</td>
+					<td>{{cartItem.date}}</td>
+					<td>{{cartItem.departureTime}}</td>
+					<td>{{cartItem.company}}</td>
+					<td>{{cartItem.luggageWeight}}</td>
+					<td>{{cartItem.airCargoDate}}</td>
+					<td>{{cartItem.seatCategory}}</td>
+					<td>{{cartItem.pricePerTicket}} $</td>
+					<td><input type="number" ng-model="cartItem.numberOfTickets"
+						class="quantityInput" min="1"
+						ng-click="updateToCart(cartItem.source, cartItem.destination, cartItem.date, cartItem.departureTime, cartItem.company, cartItem.luggageWeight, cartItem.numberOfTickets, cartItem.seatCategory)"></input></td>
+					<td><input type="image" src="/img/trash.png" alt="Submit"
+						ng-click="deleteCartItem(cartItem.source, cartItem.destination, cartItem.date, cartItem.departureTime, cartItem.company, cartItem.luggageWeight, cartItem.numberOfTickets, $index, cartItem.seatCategory)" /></td>
+				</tr>
+			</tbody>
+		</table>
+		<div ng-show="error">
+			<div class="imgLeftDivError">
+				<img class="errorImg" src="/img/error.png">
+			</div>
+			<div class="errorText textBesideImg">
+				<h5>{{errorMessage}}</h5>
+			</div>
+		</div>
+		<div ng-show="showCheckout">
+			<input type="button" id="loginButton"
+				class="btn btn-primary btn-lg gradient" value="Checkout"
+				ui-sref="checkout">
+		</div>
+	</div>
+</div>

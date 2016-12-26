@@ -1,0 +1,1 @@
+var registerApp = angular.module('quickflyApp.register', []);

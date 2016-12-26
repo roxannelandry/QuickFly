@@ -1,0 +1,71 @@
+<div ng-controller="flight-controller">
+	<h3>Informations for the flight : {{flight.source}} to
+		{{flight.destination}}</h3>
+
+	<div ng-show="error">
+		<div class="imgLeftDivError">
+			<img class="errorImg" src="/img/error.png">
+		</div>
+		<div class="errorText textBesideImg">
+			<h5>{{errorMessage}}</h5>
+		</div>
+	</div>
+
+	<div id="infoBox">
+		<form>
+			<div class="form-group">
+				<label class="labelInfo">Flight category :</label>
+				{{flight.flightCategory}}
+			</div>
+			<div class="form-group">
+				<label class="labelInfo">Source :</label> {{flight.source}}
+			</div>
+			<div class="form-group">
+				<label class="labelInfo">Destination :</label>
+				{{flight.destination}}
+			</div>
+			<div class="form-group">
+				<label class="labelInfo">Date :</label> {{flight.date}}
+			</div>
+			<div class="form-group">
+				<label class="labelInfo">Departure Time :</label>
+				{{flight.departureTime}}
+			</div>
+			<div class="form-group">
+				<label class="labelInfo">Company :</label> {{flight.company}}
+			</div>
+			<div class="form-group">
+				<label class="labelInfo">Accept living luggages :</label>
+				{{flight.isAirVivant}}
+			</div>
+			<div class="form-group"
+				ng-show="flight.flightCategory != 'AIR_LEGER'">
+				<label class="labelInfo">Economic seats available :</label>
+				{{flight.seatsEconomicAvailable}}
+			</div>
+			<div class="form-group"
+				ng-show="flight.flightCategory != 'AIR_LEGER'">
+				<label class="labelInfo">Economic seats price :</label>
+				{{flight.seatsEconomicPrice}} $
+			</div>
+			<div class="form-group">
+				<label class="labelInfo">Regular seats available :</label>
+				{{flight.seatsRegularAvailable}}
+			</div>
+			<div class="form-group">
+				<label class="labelInfo">Regular seats price :</label>
+				{{flight.seatsRegularPrice}} $
+			</div>
+			<div class="form-group"
+				ng-show="flight.flightCategory != 'AIR_LEGER'">
+				<label class="labelInfo">Business seats available :</label>
+				{{flight.seatsBusinessAvailable}}
+			</div>
+			<div class="form-group"
+				ng-show="flight.flightCategory != 'AIR_LEGER'">
+				<label class="labelInfo">Business seats price :</label>
+				{{flight.seatsBusinessPrice}} $
+			</div>
+		</form>
+	</div>
+</div>

@@ -1,0 +1,1 @@
+var homeApp = angular.module('quickflyApp.home', []);

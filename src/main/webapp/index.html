@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html data-ng-app="quickflyApp">
+<head lang="en">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<base href="/" />
+<link rel="icon" href="img/favicon.ico" />
+<title>Quickfly</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+<script type="text/javascript" src="lib/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="lib/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/app.css" />
+</head>
+<body>
+	<div ng-app="quickflyApp">
+		<div ng-include src="'components/menu/views/menu.html'"></div>
+
+		<div class="container">
+			<div ui-view></div>
+		</div>
+
+		<!-- Compiled files -->
+		<script type="text/javascript" src="lib/angular.js"></script>
+		<script type="text/javascript" src="lib/angular-cookies.min.js"></script>
+		<script type="text/javascript" src="lib/angular-ui-router.min.js"></script>
+		<script type="text/javascript" src="lib/angular-resource.min.js"></script>
+
+		<!-- Main application -->
+		<script type="text/javascript" src="js/app.js"></script>
+
+		<!-- Menu-->
+		<script type="text/javascript" src="components/menu/scripts/menu.js"></script>
+		<script type="text/javascript"
+			src="components/menu/scripts/menu-controllers.js"></script>
+		<script type="text/javascript"
+			src="components/menu/scripts/menu-resources.js"></script>
+
+		<!-- Commons -->
+		<script type="text/javascript"
+			src="components/commons/scripts/commons.js"></script>
+		<script type="text/javascript"
+			src="components/commons/scripts/UUID-resources.js"></script>
+
+		<!-- Checkout -->
+		<script type="text/javascript"
+			src="components/checkout/scripts/checkout.js"></script>
+		<script type="text/javascript"
+			src="components/checkout/scripts/checkout-controllers.js"></script>
+		<script type="text/javascript"
+			src="components/checkout/scripts/checkout-services.js"></script>
+
+		<!-- planesConfiguration -->
+		<script type="text/javascript"
+			src="components/planesConfiguration/scripts/planesConfiguration.js"></script>
+		<script type="text/javascript"
+			src="components/planesConfiguration/scripts/planesConfiguration-controllers.js"></script>
+		<script type="text/javascript"
+			src="components/planesConfiguration/scripts/planesConfiguration-services.js"></script>
+
+		<!-- Admin -->
+		<script type="text/javascript" src="components/admin/scripts/admin.js"></script>
+
+		<!--Home -->
+		<script type="text/javascript" src="components/home/scripts/home.js"></script>
+		<script type="text/javascript"
+			src="components/home/scripts/home-controllers.js"></script>
+		<script type="text/javascript"
+			src="components/home/scripts/home-services.js"></script>
+		<script type="text/javascript"
+			src="components/home/scripts/home-resources.js"></script>
+
+		<!-- Register component-->
+		<script type="text/javascript"
+			src="components/register/scripts/register.js"></script>
+		<script type="text/javascript"
+			src="components/register/scripts/register-controllers.js"></script>
+		<script type="text/javascript"
+			src="components/register/scripts/register-services.js"></script>
+		<script type="text/javascript"
+			src="components/register/scripts/register-resources.js"></script>
+
+		<!-- Login component-->
+		<script type="text/javascript" src="components/login/scripts/login.js"></script>
+		<script type="text/javascript"
+			src="components/login/scripts/login-controllers.js"></script>
+		<script type="text/javascript"
+			src="components/login/scripts/login-services.js"></script>
+		<script type="text/javascript"
+			src="components/login/scripts/login-resources.js"></script>
+
+		<!-- Logout component-->
+		<script type="text/javascript"
+			src="components/logout/scripts/logout-resources.js"></script>
+
+		<!-- Flight component-->
+		<script type="text/javascript"
+			src="components/flight/scripts/flight.js"></script>
+		<script type="text/javascript"
+			src="components/flight/scripts/flight-controllers.js"></script>
+		<script type="text/javascript"
+			src="components/flight/scripts/flight-services.js"></script>
+
+		<!-- WeightSystem component-->
+		<script type="text/javascript"
+			src="components/automaticsystem/scripts/automaticsystem-services.js"></script>
+
+		<!-- Cart component-->
+		<script type="text/javascript" src="components/cart/scripts/cart.js"></script>
+		<script type="text/javascript"
+			src="components/cart/scripts/cart-controllers.js"></script>
+		<script type="text/javascript"
+			src="components/cart/scripts/cart-services.js"></script>
+	</div>
+</body>
+</html>

@@ -1,0 +1,1 @@
+var planesConfigurationApp = angular.module('quickflyApp.planesConfiguration', []);

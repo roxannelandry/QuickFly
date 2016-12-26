@@ -1,0 +1,189 @@
+<div ng-controller="home-controller">
+	<h3>Book a flight</h3>
+	<div class="top" ng-submit="searchFlight()">
+		<form>
+			<div class="form-group" style="margin-bottom: 1%">
+				<label>Source</label> <input type="text" style="width: 75%"
+					class="form-control" id="source" ng-model="source">
+			</div>
+			<input class="btn-switch" type="button" ng-click="switchInfo()"></input>
+			<div class="form-group" style="margin-top: -4%">
+				<label>Destination</label> <input type="text" style="width: 75%"
+					class="form-control" id="destination" ng-model="destination">
+			</div>
+			<div class="form-group">
+				<label>Date</label> <input type="date" style="width: 160px"
+					max="2020-06-25" min="{{minDate| date:'yyyy-MM-dd'}}"
+					class="form-control" id="date" ng-model="date">
+			</div>
+			<div class="form-group">
+				<label>Luggage Weight</label>
+				<div class="form-inline">
+					<input type="number" style="width: 160px" min="0"
+						class="form-control" id="LuggageWeight" ng-model="luggageWeight" value="10"
+						step="0.5" ng-change="changeWeight(luggageWeight)"> <input
+						type="button" class="btn btn-primary btn-sm gradient"
+						style="padding: 8px 10px" id="weightAutoDetect"
+						value="Auto-detect" ng-click="autoDetectWeight()">
+				</div>
+
+				<div>
+					Economic <input type="checkbox" ng-model="wantEconomic"
+						ng-checked="wantEconomic"> Regular <input type="checkbox"
+						ng-model="wantRegular" ng-checked="wantRegular"> Business <input
+						type="checkbox" ng-model="wantBusiness" ng-checked="wantBusiness">
+				</div>
+				<div>
+					Living luggage <input type="checkbox" ng-model="wantAirVivant">
+				</div>
+
+				<div>
+					Allow luggages to be on a different plane <input type="checkbox"
+						ng-model="airCargoAllowed">
+				</div>
+
+			</div>
+			<div class="form-group text-right">
+				<input type="submit" class="btn btn-primary btn-lg"
+					id="searchButton" value="Search"
+					ng-click="roundWeightToUpperHalf()" />
+			</div>
+
+		</form>
+	</div>
+
+	<div ng-show="showWarningPrice" class="warning">
+		<div class="imgLeftDivError">
+			<img src="/img/warning.png">
+		</div>
+		<h5>{{warningPriceMessage}}</h5>
+	</div>
+
+	<div class="warning" ng-show="showWarningFilter">
+		<div class="imgLeftDivError">
+			<img src="/img/warning.png">
+		</div>
+		<h5>
+			{{warningFilterMessage}}
+			<button class="hideWarningButton" ng-click="hideWarningFilter()">
+				<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+			</button>
+		</h5>
+	</div>
+	<div ng-show="error">
+		<div class="imgLeftDivError">
+			<img class="errorImg" src="/img/error.png">
+		</div>
+		<div class="errorText textBesideImg">
+			<h5>{{errorMessage}}</h5>
+		</div>
+	</div>
+	<div class="bottom">
+		<table class="table table-striped">
+			<thead class="theadFont">
+				<tr>
+					<td></td>
+					<td>Company</td>
+					<td>Seats Available</td>
+					<td>Date</td>
+					<td>Departure Time</td>
+					<td>Seat category</td>
+					<td>Price</td>
+					<td>Tickets</td>
+				</tr>
+			</thead>
+			<tbody class="tbodyFont">
+				<tr ng-repeat="flight in lightFlights"
+					ng-class="{'disable': flight.hasToBeDisable}">
+					<td><a class='linkId'
+						ng-class="{'disable': flight.hasToBeDisable}"
+						ng-click="navigate(flight.company,flight.date, flight.departureTime,flight.destination,flight.source)">See
+							details</a></td>
+					<td>{{flight.company}}</td>
+					<td>{{flight.seatsRegularAvailable}}</td>
+					<td>{{flight.date}}</td>
+					<td>{{flight.departureTime}}</td>
+					<td>Regular</td>
+					<td>{{flight.seatsRegularPrice}} $</td>
+
+					<td><input ng-class="{'disable': flight.hasToBeDisable}"
+						type="number" style="width: 75px" ng-model="numberOfTickets"
+						min="1"
+						ng-click="updateToCart(flight.source, flight.destination, flight.date, flight.company, numberOfTickets)" /></td>
+
+					<td><input ng-class="{'disable': flight.hasToBeDisable}"
+						type="submit" class="btn btn-primary gradient pull-right"
+						style="width: 160px; margin-right: 4%" value="Add to cart"
+						ng-click="addToCart(flight.company, flight.date, flight.departureTime, flight.destination, flight.source, weight, numberOfTickets, $index, 'REGULAR', true)" /></td>
+				</tr>
+				<tr ng-repeat="flight in flightsEconomic"
+					ng-class="{'disable': flight.hasToBeDisable}">
+					<td><a class='linkId'
+						ng-class="{'disable': flight.hasToBeDisable}"
+						ng-click="navigate(flight.company,flight.date, flight.departureTime,flight.destination,flight.source)">See
+							details</a></td>
+					<td>{{flight.company}}</td>
+					<td>{{flight.seatsEconomicAvailable}}</td>
+					<td>{{flight.date}}</td>
+					<td>{{flight.departureTime}}</td>
+					<td>Economic</td>
+					<td>{{flight.seatsEconomicPrice}} $</td>
+
+					<td><input ng-class="{'disable': flight.hasToBeDisable}"
+						type="number" style="width: 75px" ng-model="numberOfTickets"
+						min="1"
+						ng-click="updateToCart(flight.source, flight.destination, flight.date, flight.company, numberOfTickets)" /></td>
+
+					<td><input ng-class="{'disable': flight.hasToBeDisable}"
+						type="submit" class="btn btn-primary gradient pull-right"
+						style="width: 160px; margin-right: 4%" value="Add to cart"
+						ng-click="addToCart(flight.company, flight.date, flight.departureTime, flight.destination, flight.source, luggageWeight, numberOfTickets, $index, 'ECONOMIC', false)" /></td>
+				</tr>
+				<tr ng-repeat="flight in flightsRegular"
+					ng-class="{'disable': flight.hasToBeDisable}">
+					<td><a class='linkId'
+						ng-class="{'disable': flight.hasToBeDisable}"
+						ng-click="navigate(flight.company,flight.date, flight.departureTime, flight.destination,flight.source)">See
+							details</a></td>
+					<td>{{flight.company}}</td>
+					<td>{{flight.seatsRegularAvailable}}</td>
+					<td>{{flight.date}}</td>
+					<td>{{flight.departureTime}}</td>
+					<td>Regular</td>
+					<td>{{flight.seatsRegularPrice}} $</td>
+					<td><input ng-class="{'disable': flight.hasToBeDisable}"
+						type="number" style="width: 75px" ng-model="numberOfTickets"
+						min="1"
+						ng-click="updateToCart(flight.source, flight.destination, flight.date, flight.departureTime, flight.company, numberOfTickets)" /></td>
+
+					<td><input ng-class="{'disable': flight.hasToBeDisable}"
+						type="submit" class="btn btn-primary gradient pull-right"
+						style="width: 160px; margin-right: 4%" value="Add to cart"
+						ng-click="addToCart(flight.company, flight.date, flight.departureTime, flight.destination, flight.source, luggageWeight, numberOfTickets, $index, 'REGULAR', false)" /></td>
+				</tr>
+				<tr ng-repeat="flight in flightsBusiness"
+					ng-class="{'disable': flight.hasToBeDisable}">
+					<td><a class='linkId'
+						ng-class="{'disable': flight.hasToBeDisable}"
+						ng-click="navigate(flight.company,flight.date,  flight.departureTime, flight.destination,flight.source)">See
+							details</a></td>
+					<td>{{flight.company}}</td>
+					<td>{{flight.seatsBusinessAvailable}}</td>
+					<td>{{flight.date}}</td>
+					<td>{{flight.departureTime}}</td>
+					<td>Business</td>
+					<td>{{flight.seatsBusinessPrice}} $</td>
+					<td><input ng-class="{'disable': flight.hasToBeDisable}"
+						type="number" style="width: 75px" ng-model="numberOfTickets"
+						min="1"
+						ng-click="updateToCart(flight.source, flight.destination, flight.date,  flight.departureTime,  flight.company, numberOfTickets)" /></td>
+
+					<td><input ng-class="{'disable': flight.hasToBeDisable}"
+						type="submit" class="btn btn-primary gradient pull-right"
+						style="width: 160px; margin-right: 4%" value="Add to cart"
+						ng-click="addToCart(flight.company, flight.date, flight.departureTime, flight.destination, flight.source, luggageWeight, numberOfTickets, $index, 'BUSINESS', false)" /></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
